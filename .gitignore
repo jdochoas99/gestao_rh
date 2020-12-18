@@ -1,3 +1,4 @@
 *.sqlite3
 gestao_rh_venv
 .idea
+*.pyc
