@@ -2,3 +2,4 @@
 gestao_rh_venv
 .idea
 *.pyc
+gestao_rh/__pycache__/
