@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.empresa',
     'apps.funcionarios',
+    'apps.documentos',
+    'apps.registro_hora_extra',
     'apps.departamentos',
 ]
 
