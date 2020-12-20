@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block title %} oi capeta {% endblock title %}
- {% block body %}
-oi capeta
-<a href="{% url 'logout' %}">Logout</a>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        olá {{ usuario.funcionario.nome }}
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+        {% if usuario.funcionario.empresa %}
+        <a href="">Modificar empresa</a>
+        {% else %}
+        <a href="">Criar empresa</a>
+        {% endif %}
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+</div>
+
+
   {% endblock body %}
