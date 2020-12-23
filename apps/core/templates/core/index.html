@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} oi capeta {% endblock title %}
+{% block title %}Home{% endblock title %}
 {% block body %}
 <div class="container">
   <div class="row">
@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm">
         {% if usuario.funcionario.empresa %}
-        <a href="">Modificar empresa</a>
+        <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Modificar empresa</a>
         {% else %}
         <a href="">Criar empresa</a>
         {% endif %}
