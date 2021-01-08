@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Formulario Empresa {% endblock title %}
+{% block body %}
+    <form method="post">
+    {% csrf_token %}
+        <h1>quer deletar {{obj}}</h1>
+    {{ form }}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+{% endblock body %}
