@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .models import Departamento
 # Create your views here.
 
@@ -20,3 +20,7 @@ class DepartamentoCreate(CreateView):
         departamento.empresa = self.request.user.funcionario.empresa
         departamento.save()
         return super(DepartamentoCreate, self).form_valid(form)
+
+class DepartamentoEdit(UpdateView):
+    model = Departamento
+    fields = ['nome']
