@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 {% block title %} Formulario Empresa {% endblock title %}
 {% block body %}
     <form method="post">
     {% csrf_token %}
-    {{ form }}
+    {{ form|bootstrap }}
     <button type="submit">Salvar</button>
     </form>
 {% endblock body %}
