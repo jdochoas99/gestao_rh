@@ -2,7 +2,9 @@
 {% load bootstrap %}
 {% block title %} Formulario Documento {% endblock title %}
 {% block body %}
-    <form method="post">
+{{ form.errors }}
+
+    <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|bootstrap }}
     <button type="submit">Adicionar</button>
