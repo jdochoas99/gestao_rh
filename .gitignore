@@ -1,6 +1,5 @@
 *.sqlite3
 gestao_rh_venv
-.idea
 *.pyc
 gestao_rh/__pycache__/*
 venv_gestao_rh
