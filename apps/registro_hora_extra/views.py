@@ -20,3 +20,8 @@ class HoraExtraDelete(DeleteView):
 class HoraExtraEdit(UpdateView):
     model = RegistroHoraExtra
     fields = ['motivo', 'funcionario', 'horas']
+
+
+class HoraExtraNovo(CreateView):
+    model = RegistroHoraExtra
+    fields = ['motivo', 'funcionario', 'horas']

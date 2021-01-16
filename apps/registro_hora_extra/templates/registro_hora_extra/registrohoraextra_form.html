@@ -8,6 +8,8 @@
     <button type="submit">Salvar</button>
     </form>
     <br>
+    {% if object %}
     <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger"> Delete</a>
+    {% endif %}
 
 {% endblock body %}

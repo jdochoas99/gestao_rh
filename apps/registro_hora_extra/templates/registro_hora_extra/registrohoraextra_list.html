@@ -8,8 +8,11 @@
 
     <a href="{% url 'update_hora_extra' registro_re.id %}"> {{ registro_re}}</a>
     <a href="{% url 'delete_hora_extra' registro_re.id %}" class="btn btn-danger"> Delete</a>
+
     {% endfor %}
     {% if not object_list %}
         <h3> Não existem registros de hora extra no banco de dados </h3>
     {% endif %}
+    <a href="{% url 'create_hora_extra' %}" class="btn btn-info"> Criar Hora Extra</a>
+
 {% endblock body %}
