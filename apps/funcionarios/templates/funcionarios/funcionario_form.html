@@ -8,10 +8,21 @@
     <button type="submit">Salvar</button>
     </form>
 <br>
-<a href="{% url 'create_documento' object.id %}" class="btn btn-success">    Adicionar documento	</a>
-<br>
+<h2>Documentos</h2>
+<ol>
 {% for documento in object.documento_set.all %}
 
-    <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }}  </a><br>
+    <li><a href="{{ documento.arquivo.url }} "> {{ documento.descricao }}  </a></li>
+{% endfor %}
+</ol>
+<a href="{% url 'create_documento' object.id %}" class="btn btn-success">    Adicionar documento	</a>
+<br>
+
+<br>
+<h2>Banco de Horas</h2>
+<ol>
+{% for registro_hora in object.registrohoraextra_set.all %}
+
+    <li>Motivo: {{ registro_hora.motivo }},  Quantidade de horas: {{ registro_hora.horas }}</li>
 {% endfor %}
 {% endblock body %}
