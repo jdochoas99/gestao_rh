@@ -7,6 +7,7 @@
     {{ form|bootstrap }}
     <button type="submit">Salvar</button>
     </form>
+{% if object %}
 <br>
 <h2>Documentos</h2>
 <ol>
@@ -14,10 +15,9 @@
 
     <li><a href="{{ documento.arquivo.url }} "> {{ documento.descricao }}  </a></li>
 {% endfor %}
-</ol>
+    </ol>
 <a href="{% url 'create_documento' object.id %}" class="btn btn-success">    Adicionar documento	</a>
 <br>
-
 <br>
 <h2>Banco de Horas</h2>
 <ol>
@@ -26,5 +26,8 @@
     <li><a href="{% url 'update_hora_extra' registro_hora.id %}"> Motivo: {{ registro_hora.motivo }},  Quantidade de horas: {{ registro_hora.horas }}</li></a>
 {% endfor %}
     <h3>Total Hora Extra {{object.total_horas_extra}}h</h3>
-    <a href="{% url 'create_hora_extra'%}"> Criar Hora Extra</a>
+    <a href="{% url 'create_hora_extra'%}" class="btn btn-success"> Criar Hora Extra</a>
+{%endif%}
+
+
 {% endblock body %}
