@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
+from django.views import View
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
 from .models import RegistroHoraExtra
 from .forms import RegistroHoraExtraForm
@@ -52,3 +53,9 @@ class HoraExtraNovo(CreateView):
 
     def get_success_url(self):
         return reverse_lazy('list_hora_extra')
+
+
+
+class UtilizouHoraExtra(View):
+    def post(self, pk):
+        pass

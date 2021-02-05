@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+{% load static %}
 {% block title %} Formulario Hora Extra {% endblock title %}
 {% block body %}
     <form method="post">
@@ -7,10 +8,17 @@
     {{ form|bootstrap }}
     <br>
     <button class="btn btn-primary" type="submit">Salvar</button>
-    </form>
     <br>
     {% if object %}
     <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger"> Delete</a>
+    <button onclick="utilizou_hora_extra({{object.id}})" class="btn btn-primary"> Marcar como Utilizado</button>
     {% endif %}
+    </form>
+
 
 {% endblock body %}
+
+{% block static %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/funcoes-ajax.js' %}"></script>
+{% endblock static%}
