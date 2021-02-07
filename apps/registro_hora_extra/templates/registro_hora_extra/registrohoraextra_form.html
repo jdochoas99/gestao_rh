@@ -8,13 +8,14 @@
     {{ form|bootstrap }}
     <br>
     <button class="btn btn-primary" type="submit">Salvar</button>
-    <br>
     {% if object %}
     <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger"> Delete</a>
+    <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-primary" type="button"> Marcar como Utilizado</button>
     </form>
-        <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-primary"> Marcar como Utilizado</button>
+    <h6 id="horas_atualizadas"> {{ object.funcionario.total_horas_extra }}</h6>
     {% endif %}
-
+    <br>
+    <p id="mensagem"></p>
 
 
 {% endblock body %}
