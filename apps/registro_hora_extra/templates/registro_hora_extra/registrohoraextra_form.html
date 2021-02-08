@@ -11,6 +11,7 @@
     {% if object %}
     <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger"> Delete</a>
     <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-primary" type="button"> Marcar como Utilizado</button>
+    <button onclick="naoUtilizouHoraExtra({{ object.id }})" class="btn btn-danger" type="button"> Marcar como Não Utilizado</button>
     </form>
     <h6 id="horas_atualizadas"> {{ object.funcionario.total_horas_extra }}</h6>
     {% endif %}

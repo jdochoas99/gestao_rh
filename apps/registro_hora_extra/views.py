@@ -34,6 +34,7 @@ class HoraExtraEdit(UpdateView):
         kwargs.update({'user': self.request.user})
         return kwargs
 
+
 class HoraExtraEditBase(UpdateView):
     model = RegistroHoraExtra
     form_class = RegistroHoraExtraForm
@@ -60,11 +61,19 @@ class HoraExtraNovo(CreateView):
         return reverse_lazy('list_hora_extra')
 
 
-
 class UtilizouHoraExtra(View):
     def post(self, *args, **kwargs):
-        response = json.dumps({'mensagem':'Requisição executada'})
-        registro_hora_extra = RegistroHoraExtra.objects.get(id = kwargs['pk'])
+        response = json.dumps({'mensagem': 'Requisição executada'})
+        registro_hora_extra = RegistroHoraExtra.objects.get(id=kwargs['pk'])
         registro_hora_extra.utilizada = True
         registro_hora_extra.save()
         return HttpResponse(response, content_type='application/json')
+
+class NaoUtilizouHoraExtra(View):
+    def post(self, *args, **kwargs):
+        response = json.dumps({'mensagem': 'Requisição executada'})
+        registro_hora_extra = RegistroHoraExtra.objects.get(id=kwargs['pk'])
+        registro_hora_extra.utilizada = False
+        registro_hora_extra.save()
+        return HttpResponse(response, content_type='application/json')
+
